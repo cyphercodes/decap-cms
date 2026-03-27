@@ -225,7 +225,7 @@ export function summaryFormatter(summaryTemplate: string, entry: EntryMap, colle
     parseDateFromEntry(
       entry as unknown as Map<string, unknown>,
       selectInferredField(collection, 'date'),
-    ) || null;
+    ) || new Date(Date.now());
   const identifier = entryData.getIn(keyToPathArray(selectIdentifier(collection) as string));
 
   entryData = addFileTemplateFields(entry.get('path'), entryData, collection.get('folder'));
